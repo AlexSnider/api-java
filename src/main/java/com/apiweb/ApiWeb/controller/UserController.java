@@ -24,4 +24,14 @@ public class UserController {
     List<Users> list() {
         return userService.list();
     }
+
+    @PutMapping
+    List<Users> update(@RequestBody Users users) {
+        return userService.update(users);
+    }
+
+    @DeleteMapping("/{id}")
+    List<Users> delete(@PathVariable("id") Long id) {
+        return userService.delete(id);
+    }
 }
