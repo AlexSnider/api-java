@@ -6,6 +6,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -33,7 +34,7 @@ public class UserService {
         return list();
     }
 
-    public List<Users> delete(Long id) {
+    public List<Users> delete(UUID id) {
         usersRepository.deleteById(id);
 
         return list();
