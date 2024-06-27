@@ -27,6 +27,16 @@ public class UserService {
         return usersRepository.findAll(sort);
     }
 
+    public List<Users> update(Users users) {
+        usersRepository.save(users);
 
+        return list();
+    }
+
+    public List<Users> delete(Long id) {
+        usersRepository.deleteById(id);
+
+        return list();
+    }
 
 }
